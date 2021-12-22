@@ -1,0 +1,8 @@
+<ul>
+<% @all_articles.each do |article| %>
+	<h2><%= article.title.capitalize %></h2>
+	<p><%= article.content %></p>
+	<%= link_to "show article", article_path(article)%>
+
+<% end %>
+</ul>

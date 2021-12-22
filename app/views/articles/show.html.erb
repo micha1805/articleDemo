@@ -1,0 +1,22 @@
+<h2>Title : <%= @article.title %></h2>
+<p><%= @article.content %></p>
+
+<% unless @article.comments.empty? %>
+<ul>
+
+	<% @article.comments.each do |comment| %>
+	<li>
+		<p><%= comment.author %> said : </p>
+		<p><%= comment.content %></p>
+	</li>
+
+	<% end %>
+
+</ul>
+<% end %>
+
+
+<%= link_to "Delete this article ?",
+            article_path(@article),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
